@@ -1,0 +1,68 @@
+API endpoints for Valet Assistant
+Author: Ben Stenberg
+Date: 4/25/23
+
+--------- ENDPOINTS FOR CAR DATA ---------
+
+GET api/v1/clients/:phone
+    -- get parked car info from phone number
+
+GET api/v1/?filter=:filter
+    -- get all cars for current user
+    -- filter : PARKING, PARKED, REQUESTED, RETRIEVING, RETRIEVED, RETURNED
+    -- optional filter will only return cars with that status
+
+POST api/v1/
+    -- put new car in database
+    -- body should contain parkedCar object
+    -- returns the new car
+
+GET api/v1/cids/:cid
+    -- get the parked car with this id
+
+POST api/v1/cids/:cid
+    -- update the parked car with this id
+    -- body should contain the parkedCar object with updated fields
+
+DELETE api/v1/cids/:cid
+    -- delete the parked car with this id
+
+GET api/v1/makes
+    -- get all vehicle makes
+
+GET api/v1/makes/:makes
+    -- get all models for this vehicle make
+
+------------------------------------------
+
+--------- ENDPOINTS FOR USER DATA --------
+
+GET api/v1/users
+    -- get all users
+
+POST api/v1/users
+    -- put new user into database
+    -- body should contain user object
+    -- returns the new user
+
+POST api/v1/uids/:uids
+    -- update the user with this id
+    -- body should contain user object with updated fields
+    -- returns updated user
+
+DELETE api/v1/uids/:uids
+    -- delete the user with this id
+
+GET api/v1/uids/:uids
+    -- get the user with this id
+
+POST api/v1/login
+    -- login
+    -- body should contain credentials:
+        username: XXXX
+        password: XXXX
+
+POST api/v1/logout
+    -- logout
+
+------------------------------------------

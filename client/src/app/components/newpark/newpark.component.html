@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-6">
+            <form>
+                <h3>Vehicle</h3>
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <select  id="make" class="form-select" name="make" [(ngModel)]="make" (change)="onChange($event)">
+                        <option *ngFor="let make of makes" [value]="make">{{ make }}</option>
+                    </select>
+
+                    <label for="model">Model</label>
+                    <select  id="model" class="form-select" name="model" [(ngModel)]="model">
+                        <option *ngFor="let model of models" [value]="model">{{ model }}</option>
+                    </select>
+                    
+                    <label for="color">Color</label>
+                    <input type="text" class="form-control" id="color" placeholder="e.g. Red"  name="color" [(ngModel)]="color">
+
+                    <label for="plate">License Plate</label>
+                    <input type="text" class="form-control" id="plate" placeholder="e.g. abc-1234" name="plate" [(ngModel)]="plate">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form>
+                <h3>Parking Information</h3>
+                <div class="form-group">
+                    <label for="make">Client Name</label>
+                    <input type="text" class="form-control" id="client" placeholder="e.g. John Doe" name="client" [(ngModel)]="client">
+
+                    <label for="make">Client Phone Number</label>
+                    <input type="text" class="form-control" id="phone" placeholder="e.g. 123-456-7890" name="phone" [(ngModel)]="phone">
+
+                    <label for="color">Parking Spot</label>
+                    <input type="text" class="form-control" id="spot" placeholder="e.g. A12" name="spot" [(ngModel)]="spot">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <div class="row mt-4 justify-content-end">
+        <div class="col-2">
+            <button type="button" class="btn btn-primary m-2" (click)="submit()">Submit</button>
+            <a type="button" class="btn btn-secondary m-2" routerLink="/home">Cancel</a>
+        </div>
+    </div>
+</div>

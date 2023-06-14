@@ -1,0 +1,19 @@
+
+<div class="background d-flex justify-content-center">
+    <form id="form" class="p-4 text-center">
+        <h3>Enter your phone number to view your parked vehicle:</h3>
+        <div>
+            <div class="form-outline">
+                <input type="tel" id="typePhone" class="form-control m-4" name="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" [(ngModel)]="phone"/>
+                
+            </div>
+
+            <button type="button" (click)="submitPhone()" class="btn btn-primary btn-sm">Submit</button>
+
+            <p style="color:red" [hidden]="!error">Please enter a valid phone number of the form AAA-BBB-CCCC!</p>
+        </div>
+        <div class="d-flex justify-content-end">
+            <a routerLink="/login">Or Company Login</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,25 @@
+<div class="container mt-4" *ngIf="loaded">
+    <div class="failure" *ngIf="!valid">
+        <p class="text-center">No car found with this phone number!</p>
+        <div class="d-flex justify-content-center"><a type="button" routerLink="/welcome"
+                class="btn btn-info">Return</a></div>
+    </div>
+    <div class="sucess" *ngIf="valid">
+        <p class="text-center">Hello {{ this.parkedCar.client }}!</p>
+        <p class="text-center">Your {{ this.car.make }} {{ this.car.model }} is {{ this.parkedCar.status }}.</p>
+
+        <div class="d-flex justify-content-center">
+            <button type="button" *ngIf="canBeRetrieved" (click)="requestRetrieval()" class="btn btn-info">Request
+                Retrieval</button>
+            <button type="button" *ngIf="!canBeRetrieved" disabled (click)="requestRetrieval()"
+                class="btn btn-success">Your vehicle
+                is being returned.
+            </button>
+        </div>
+
+        <div class="d-flex justify-content-center mt-2">
+            <a type="button" routerLink="/welcome" class="btn btn-secondary">Back
+            </a>
+        </div>
+    </div>
+</div>

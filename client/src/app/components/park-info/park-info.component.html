@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row mt-4" *ngIf="loaded">
+        <div class="col-6">
+            <form>
+                <h3>Vehicle</h3>
+                <div class="form-group">
+                    <label for="make">Make</label>
+                    <input type="text" class="form-control" id="make" name="make" [(ngModel)]="car.make">
+
+                    <label for="make">Model</label>
+                    <input type="text" class="form-control" id="model" name="model" [(ngModel)]="car.model">
+
+                    <label for="color">Color</label>
+                    <input type="text" class="form-control" id="color" name="color" [(ngModel)]="car.color">
+
+                    <label for="plate">License Plate</label>
+                    <input type="text" class="form-control" id="plate" name="plate" [(ngModel)]="car.plate">
+                </div>
+            </form>
+        </div>
+
+        <div class="col-6">
+            <form>
+                <h3>Parking Information</h3>
+                <div class="form-group">
+                    <label for="id">Id</label>
+                    <input type="text" class="form-control" id="id" name="id" [(ngModel)]="parkedCar._id" disabled>
+
+                    <label for="employee">Entered By</label>
+                    <input type="text" class="form-control" id="employee" name="employee" [(ngModel)]="employee"
+                        disabled>
+
+                    <label for="date">Date</label>
+                    <input type="text" class="form-control" id="date" name="date" [(ngModel)]="parkedCar.date" disabled>
+
+                    <label for="status">Status</label>
+                    <select name="status" id="status" class="form-select" [(ngModel)]="parkedCar.status">
+                        <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+                    </select>
+
+                    <label for="make">Client Name</label>
+                    <input type="text" class="form-control" id="client" name="client" [(ngModel)]="parkedCar.client">
+
+                    <label for="make">Client Phone Number</label>
+                    <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="parkedCar.phone">
+
+                    <label for="color">Parking Spot</label>
+                    <input type="text" class="form-control" id="spot" name="spot" [(ngModel)]="parkedCar.location">
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+    <div class="row mt-4 justify-content-end">
+        <div class="col-3">
+            <button type="button" class="btn btn-primary m-2" (click)="update()">Update</button>
+            <button type="button" class="btn btn-danger m-2" (click)="delete()">Delete</button>
+            <a type="button" class="btn btn-secondary m-2" routerLink="/home">Cancel</a>
+        </div>
+    </div>
+</div>

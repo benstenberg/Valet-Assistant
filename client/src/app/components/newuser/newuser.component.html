@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <form class="row d-flex justify-content-center">
+        <div class="col-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name"
+                    name="name" [(ngModel)]="name">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Username" name="username"
+                    [(ngModel)]="username">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password"
+                    placeholder="Password" [(ngModel)]="password">
+            </div>
+        </div>
+    </form>
+
+    <div class="row mt-4 justify-content-end">
+        <div class="col-6">
+            <button type="button" (click)="createUser()" class="btn btn-primary m-2">Submit</button>
+            <a type="button" class="btn btn-secondary m-2" routerLink="/admin">Cancel</a>
+        </div>
+    </div>
+</div>
